@@ -16,7 +16,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://psquare-hr-ms-client-8ljtywpgp-anshuls-projects-b6559d30.vercel.app", // frontend port
+    origin: "https://psquare-hr-ms-client.vercel.app", // frontend port
     credentials: true,
   })
 );
