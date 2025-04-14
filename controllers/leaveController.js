@@ -1,10 +1,11 @@
 const Leave = require("../models/leaveModel");
 
 const applyLeave = async (req, res) => {
-  const { employee, reason, startDate, endDate, doc } = req.body;
+
+  const { employee, position, reason, startDate, status } = req.body;
 
   try {
-    const leave = new Leave({ employee, reason, startDate, endDate, doc });
+    const leave = new Leave({ employee, reason, startDate, position, status });
     await leave.save();
     res.status(201).json(leave);
   } catch (error) {
