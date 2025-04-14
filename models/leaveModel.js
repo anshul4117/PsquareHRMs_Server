@@ -1,12 +1,10 @@
 const mongoose = require("mongoose");
 
 const leaveSchema = new mongoose.Schema({
-  employee: { type: mongoose.Schema.Types.ObjectId, ref: "Employee" },
+  employee: { type: String, required: true },
   reason: String,
   startDate: Date,
-  endDate: Date,
-  status: { type: String, enum: ["Pending", "Approved", "Rejected"], default: "Pending" },
-  doc: String, // Path or URL
+  status: { type: String, enum: ["Pending", "Approved"], default: "Pending" },
   createdAt: { type: Date, default: Date.now },
 });
 
